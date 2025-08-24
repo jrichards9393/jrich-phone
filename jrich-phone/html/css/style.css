@@ -1,0 +1,114 @@
+.phone-container {
+    position: fixed;
+    bottom: 20%;  /* Adjusted for right-hand placement */
+    right: 10%;   /* Moved to right side, Quasar-like */
+    transform: none; /* Removed translateX for right alignment */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.physical-phone {
+    width: 180px;  /* Quasar-like size */
+    height: 360px;
+    background: url('../images/phone_model.png') no-repeat center/cover;  /* Physical phone texture */
+    border-radius: 18px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    animation: phoneHold 1s ease-in-out forwards;
+}
+
+@keyframes phoneHold {
+    from { transform: translateY(100px) rotateX(30deg); opacity: 0; }
+    to { transform: translateY(0) rotateX(0); opacity: 1; }
+}
+
+.phone-screen {
+    width: 85%;
+    height: 85%;
+    background: url('../images/default_wallpaper.png') no-repeat center/cover;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.status-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 8px;
+    color: white;
+    background: rgba(0,0,0,0.3);
+    font-size: 12px;
+}
+
+.lockscreen {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+}
+
+.fingerprint {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.homescreen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 50px 8px 8px;
+    height: 100%;
+}
+
+.apps div {
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.apps div img {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 3px;
+}
+
+.apps div span {
+    font-size: 10px;
+    color: white;
+}
+
+.apps div:hover {
+    transform: scale(1.05);
+}
+
+.notifications {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    padding: 5px;
+}
+
+.dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+}

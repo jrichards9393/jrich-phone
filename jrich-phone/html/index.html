@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jrich-phone</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="phone-container" class="phone-container" style="display: none;">
+        <div id="physical-phone" class="physical-phone">
+            <div id="screen" class="phone-screen">
+                <div class="status-bar">
+                    <span class="time">03:40 PM</span>
+                    <span class="battery">100%</span>
+                </div>
+                <div class="lockscreen" id="lockscreen">
+                    <div class="fingerprint">Unlock</div>
+                </div>
+                <div class="homescreen" id="homescreen" style="display:none;">
+                    <div class="apps" id="apps"></div>
+                </div>
+                <div class="notifications"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nui.js/1.0/nui.js"></script>
+</body>
+</html>
